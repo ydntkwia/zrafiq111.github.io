@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		.box{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			transition: 0.9s;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="box" id="box"></div>
+	<select id="selection">
+		<option value="red" checked>red</option>
+		<option value="green" checked>green</option>
+		<option value="blue" checked>blue</option>
+	</select>
+	<select id="size">
+		<option value="300" checked>300</option>
+		<option value="400" checked>400</option>
+		<option value="500" checked>500</option>
+	</select>
+	<select id="display">
+		<option value="show" checked>none</option>
+		<option value="hide" checked>all</option>
+	</select>
+	<button>clik me</button>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"> -->
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<script type="text/javascript">
+
+		// var a =document.querySelectorAll(".box");
+		// var ab = a[0];
+		// var c = document.getElementById("selection");
+		// c.addEventListener('change',function(event){
+		//  	ab.style.backgroundColor= event.target.value;
+		// });
+
+		$(document).ready(function(){
+			$("button").click(function(){
+				$(".box").fadeOut();
+			});
+			$("#selection").on('change',function(e){
+				var a = $("#selection").val();
+				$(".box").css("background-color", a);				
+			});
+			$("#size").on('change',function(e){
+				var ac = $("#size").val();
+				$(".box").css({
+					'width' : ac+'px',
+					'height' : ac+'px'
+				});				
+			});
+			$("#display").on('change',function(e){
+				// $("#box")[e.target.value]();
+
+				var ab = $("#display").val();
+				if (ab == "show") {
+					$(".box").fadeIn("slow");				
+				}else{
+					$(".box").fadeOut("slow");				
+				}
+				// $(".box").css("display", ab);				
+			});
+		});
+
+		// console.log('hello');
+		// var person = {
+		// 	name : 'Alan',
+		// 	age : 209,
+		// 	height:18.5,
+		// 	greeting: "hi i'm alan, welcome to my web",
+		// 	hobbies: ['walking','running']
+		// }
+		// console.log(person);
+
+		// pemanggilan 1
+		// person.name;
+		// person["name"];
+		// var number = 5;
+
+		// var ifco = (number > 2) ? "1" : "2"; 
+		
+		// for (var i = 0; i < 4; i++) {
+		// 	console.log(i);
+		// }
+
+		// function kl(){
+		// 	switch(number){
+		// 		default:
+		// 		console.log("ini bukan angka");
+		// 		break;
+		// 		case 1:
+		// 		console.log("ini angka 1");
+		// 		break;
+		// 		case 2:
+		// 		console.log("ini angka 2");
+		// 		break;
+		// 	}	
+		// }
+
+		// function hello(){
+		// 	return 'hello';
+		// }
+
+		// var hello2 = hello();
+		// console.log(hello2);
+	</script>
+</body>
+</html>
