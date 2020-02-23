@@ -50,7 +50,9 @@ body::before{
     background-color: #252525;
     z-index: 99;
     overflow: hidden;
-    transition: 0.7s;
+    transition-duration: 0.7s;
+    transition-delay: 1s; 
+    background-image: url('bg-dark.png');
 }
 body.ready::before{
     content: '';
